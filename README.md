@@ -1,5 +1,5 @@
 
-## Brain-Speech CLIP: Contrastive Learning for EEG and Speech Envelope Alignmen
+## Brain-Speech CLIP: Contrastive Learning for EEG and Speech Envelope Alignment
 
 In a situation where multiple conversations happening around us. Despite the noise, human listeners have an extraordinary ability to focus on a single speaker while ignoring others. Our project dives into this, hypothesizing that the speech representations we attend to align more closely with our EEG brainwave patterns than those we ignore.
 

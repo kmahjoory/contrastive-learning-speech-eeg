@@ -14,6 +14,12 @@ We introduce **Brain-Speech CLIP**, a contrastive learning framework inspired by
 
 - **Zero-Shot Learning**: Capable of generalizing to new, unseen data without additional training.
 
-### Results
+### Model Architecture
 
 ![Example Image](docs/images/brain_speech_clip.jpg)
+
+
+## Results
+Our model achieved top-5 accuracy of 60 % on alighning EEG and speech envelope representations. The model also achieved an accuracy of 91% on identifying the attended speech in a multi-talker scenario.
+
+![Example Image](docs/images/eeg_speech_clip.jpg)

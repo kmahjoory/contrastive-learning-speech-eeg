@@ -16,4 +16,4 @@ We introduce **Brain-Speech CLIP**, a contrastive learning framework inspired by
 
 ### Results
 
-
+![Example Image](docs/images/brain_speech_clip.jpg)

@@ -42,6 +42,7 @@ parser.add_argument("--scheduler_gamma", default=0.5, type=float, help="Schedule
 parser.add_argument("--save_best", default=False, type=bool, help="Save the best model or not")
 parser.add_argument("--save_curves", default=False, type=bool, help="Save the loss curves or not")
 parser.add_argument("--num_subjects", default=5, type=int, help="Number of subjects to use")
+parser.add_argument("--drp_fact", default=0.5, type=float, help="Dropout factor")
 args = vars(parser.parse_args())
  
 # Parameters to be tuned
@@ -53,6 +54,7 @@ scheduler_gamma = args["scheduler_gamma"]
 save_best = args["save_best"]
 save_curves = args["save_curves"]
 num_subjects = args["num_subjects"]
+drp_fact = args["drp_fact"]
 subj_ids = list(range(1, num_subjects+1))
 
 
@@ -114,8 +116,8 @@ dl_val = DataLoader(MyDataset(X["eegs_val"], X["envs_val"]),
 
 
 # Create model
-eeg_encoder = EEGEncoder()
-env_encoder = EnvelopeEncoder()
+eeg_encoder = EEGEncoder(drp_fact=drp_fact)
+env_encoder = EnvelopeEncoder(drp_fact=drp_fact)
 model = CLEE(eeg_encoder, env_encoder)
 model.to(device)
 
@@ -187,8 +189,8 @@ for name, model in models_dict.items():
                     writer.add_scalar('Loss/train_batch', loss.item(), cnt)
 
             # normalize weights
-            with torch.no_grad():
-                model.eeg_encoder.normalize_weights()
+            #with torch.no_grad():
+            #    model.eeg_encoder.normalize_weights()
             
             #break   
 

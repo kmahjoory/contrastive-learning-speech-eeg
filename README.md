@@ -22,5 +22,23 @@ We introduce **Brain-Speech CLIP**, a contrastive learning framework inspired by
 ## Results
 Our model achieved top-5 accuracy of 60 % on alighning EEG and speech envelope representations. The model also achieved an accuracy of 91% on identifying the attended speech in a multi-talker scenario.
 
-
 <img src="docs/images/eeg_speech_clip.jpg" alt="Example Image" width="800" />
+
+
+## Installation
+
+Clone the repository and and change the directory to the project folder:
+```bash
+git clone https://github.com/kmahjoory/contrastive-learning-speech-eeg.git
+cd contrastive-learning-speech-eeg
+```
+Create a virtual environment named "myenv" using the Python module "venv" and activate it:
+```bash
+python -m venv "myenv"
+source myenv/bin/activate
+```
+Install the required packages using pip and check the installed packages:
+```bash
+pip install -r requirements.txt
+pip list
+```
